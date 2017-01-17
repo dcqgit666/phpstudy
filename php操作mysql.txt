@@ -51,3 +51,17 @@ $myinsert=mysqli_query($con,'insert into test(name) values("塔塔")');插入数
 			$query=mysqli_query('select count(*) from test');
 			$arr=mysqli_fetch_row($query);
 			echo $arr[0];
+	mysqli_affected_rows()//返回前面一条受到影响MySQL操作
+		if(mysqli_query($con,'update test set num=80 where id =1')){
+		 	echo "更新成功，更新数据为";
+		 	echo mysqli_affected_rows($con);
+		}else{
+		 	echo "更新失败";
+		}
+		if(mysqli_query($con,'insert into test(name,num,price) values("西红柿",10,8)')){
+			echo "插入成功，插入数据为";
+			echo mysqli_affected_rows($con);
+		}else{
+			echo mysqli_error($con);
+			echo "插入失败";
+		}

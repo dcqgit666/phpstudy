@@ -8,11 +8,8 @@ mysqli_query($con,"set names 'utf8'");
 // $num=mysqli_num_rows($query);
 // echo $num;
 
-// $query=mysqli_query($con,'select count(*) from test');
-// $num=mysqli_fetch_row($query);
-// echo $num[0];
-
 $query=mysqli_query($con,'select count(*) from test');
-echo mysqli_result($query,0);
+$num=mysqli_fetch_row($query);
+echo $num[0];
 
 mysqli_close($con);

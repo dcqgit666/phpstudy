@@ -1,0 +1,53 @@
+header("Content-type:text/html;charset=utf-8");打开方式显示编码
+$con=mysqli_connect('localhost','root','654321');连接数据库
+mysqli_query($con,'set names utf8');告诉数据库写入读取数据的方式
+$dbtest=mysqli_select_db($con,'test');选择数据库
+$myinsert=mysqli_query($con,'insert into test(name) values("塔塔")');插入数据
+查找数据库
+	$mysecl=mysqli_query($con,'select name,num from test');
+	mysqli_fetch_row()
+		$m返回结果集的当前行作为对象.yrow=mysqli_fetch_row($mysecl);//返回第一条数据
+		mysqli_fetch_row()——依次查询数据库的每条数据，以数组形式返回；返回的数组是一维索引数组，数组的索引与字段在表中的排序对应。如果结果集中没有行，则返回对应于派生行或NULL的字符串数组。
+		while ($myrow=mysqli_fetch_row($mysecl)) {
+		 	echo $myrow[0].$myrow[1]."个<br>";
+		 	// print_r($myrow);
+		}
+	mysqli_fetch_array()
+		$myarray=mysqli_fetch_array($mysecl);//返回数组
+		mysqli_fetch_array()——默认状态下产生索引数组和关联数组
+		mysqli_fetch_array()——的第二个参数选项
+		 	MYSQLI_NUM——只输出索引数组
+		 	MYSQLI_ASSOC——只输出关联数组
+		 	MYSQLI_BOTH——默认
+	 	while ($myarray=mysqli_fetch_array($mysecl)) {
+			echo $myarray["name"].$myarray["num"]."个<br>";
+		}
+	mysqli_fetch_assoc()
+		$myass=mysqli_fetch_assoc($mysecl);
+		mysqli_fetch_assoc()——只输出关联数组等同于mysqli_fetch_array($result,MYSQLI_ASSOC)
+		while ($myarray=mysqli_fetch_assoc($mysecl)) {
+			// echo $myarray["name"].$myarray["num"]."个<br>";
+			print_r($myarray);
+		}
+	mysqli_fetch_object()返回结果集为对象。
+		$object=ysqli_fetch_object($mysecl);
+		while($object=ysqli_fetch_object($mysecl)){
+			$object->name."<br>";
+		}返回结果集为对象。
+	mysqli_num_row()返回结果集的行数。
+		$row=mysqli_fnum_row($mysecl);
+		if($mysecl&&$row){
+			//进行数据输出
+			while(){}
+		}else{
+			echo '没有找到相关数据';
+		}
+	输出数据总条数
+		方法一
+			$mysecl=mysqli_query($con,'select * from test');
+			$num=mysqli_num_rows($mysecl);
+			echo $num;
+		方法二
+			$query=mysqli_query('select count(*) from test');
+			$arr=mysqli_fetch_row($query);
+			echo $arr[0];

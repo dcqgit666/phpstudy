@@ -10,6 +10,6 @@ mysqli_query($con,"set names 'utf8'");
 
 $query=mysqli_query($con,'select count(*) from test');
 $num=mysqli_fetch_row($query);
-echo $num[0];
+echo $num[0]."<br>";
 
 mysqli_close($con);

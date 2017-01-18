@@ -9,7 +9,7 @@
 	$description=$_POST["description"];
 	$content=$_POST["content"];
 	$dateline=time();
-	$insert="insert into article(title,author,description,content,dateline) values('$title','$author',d'$escription','$content',$dateline)";
+	$insert="insert into article(title,author,description,content,dateline) values('$title','$author','$description','$content',$dateline)";
 	if (mysqli_query($con,$insert)) {
 		echo "<script>alert('文章发布成功');window.location.href='add.html'</script>";
 	}else{

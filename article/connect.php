@@ -10,6 +10,6 @@
 		echo mysqli_error($con);
 	}
 	// 设置字符集
-	if (mysqli_query($con,'set names utf8');) {
+	if (mysqli_query($con,'set names utf8')) {
 		echo mysqli_error($con);
 	}

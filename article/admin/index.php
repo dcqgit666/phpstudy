@@ -107,7 +107,7 @@
                                                 <td><?php echo $value['id']?></td>
                                                 <td><?php echo $value['title']?></td>
                                                 <td><?php echo $value['author']?></td>
-                                                <td><?php echo $value['dateline']?></td>
+                                                <td><?php echo date("Y-m-d",$value['dateline']);                   ?></td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
                                                         <a href="edit.php?id=<?php echo $value['id']?>">

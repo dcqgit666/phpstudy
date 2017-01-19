@@ -10,7 +10,7 @@
 	$update="update article set title='$title',author='$author',description='$description',content='$content',dateline=$dateline where id=$id";
 	// echo $update;
 	if (mysqli_query($con,$update)) {
-		echo "<script>alert('文章修改成功');window.location.href='edit.php'</script>";
+		echo "<script>alert('文章修改成功');window.location.href='indes.php'</script>";
 	}else{
 		echo "<script>alert('文章修改失败');window.location.href='edit.php'</script>";
 	}

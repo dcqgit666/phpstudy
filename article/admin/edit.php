@@ -59,18 +59,13 @@
             <!-- 菜单 -->
             <ul class="sidebar-nav">
             		<li class="sidebar-nav-link">
-                    <a href="index.html">
+                    <a href="index.php">
                         <i class="am-icon-home sidebar-nav-link-logo"></i> 首页
                     </a>
                 </li>
                 <li class="sidebar-nav-link">
                     <a href="add.html">
                         <i class="am-icon-plus  sidebar-nav-link-logo"></i> 新增
-                    </a>
-                </li>
-                <li class="sidebar-nav-link">
-                    <a href="edit.php">
-                        <i class="am-icon-pencil  sidebar-nav-link-logo"></i> 编辑
                     </a>
                 </li>
             </ul>

@@ -1,6 +1,7 @@
 ﻿<?php
   require_once("../connect.php");
-    $select=mysqli_query($con,"select * from article where id=1");
+  $id=$_GET['id'];
+    $select=mysqli_query($con,"select * from article where id=$id");
    $data=mysqli_fetch_assoc($select);
 ?>
 <!DOCTYPE html>
